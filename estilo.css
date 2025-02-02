@@ -645,5 +645,100 @@ body {
     background-color: #355bbd;
 }
 
+/* Estilos para telas menores que 1024px (tablets e celulares) */
+@media screen and (max-width: 1024px) {
+    .menu ul {
+        flex-direction: row;
+        gap: 5px;
+    }
+    .escudo, .logobrasil {
+        width: 80px;
+    }
+    .menu a {
+        font-size: 18px;
+        padding: 8px;
+    }
+    .fundo {
+        min-height: 400px;
+    }
+    .fundo a {
+        font-size: 24px;
+        padding: 15px;
+    }
+    .artigos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .centralizar img {
+        width: 200px;
+    }
+    .centro{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .jogos_hoje img{
+        height: 150px;
+        width: auto;
+        margin-top: 30px;
+    }
+}
+
+/* Estilos para telas menores que 768px (celulares) */
+@media screen and (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    .menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
+    .menu ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .menu a {
+        font-size: 16px;
+        padding: 10px;
+    }
+    .fundo {
+        min-height: 300px;
+    }
+    .fundo img {
+        width: 150px;
+    }
+    .fundo a {
+        font-size: 20px;
+        padding: 10px;
+    }
+    .artigos {
+        grid-template-columns: 1fr;
+    }
+    .artigos img {
+        max-width: 100%;
+    }
+    .jogadores1 {
+        grid-template-columns: 1fr;
+    }
+    .jogador1 img {
+        width: 100px;
+    }
+    .rodape {
+        text-align: center;
+    }
+    .logo-marcas, .logo-redesocial {
+        flex-direction: column;
+        align-items: center;
+    }
+    .logo-marcas a, .logo-redesocial a {
+        margin-bottom: 10px;
+    }
+}
+
+
 
 
