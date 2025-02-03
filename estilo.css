@@ -12,6 +12,7 @@ body {
 .container{
     display: grid;
     min-height: 100vh;
+    min-width: 100vw;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 90px 1fr 1fr 100px;
     grid-template-areas: 
@@ -75,9 +76,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    width: 100%; 
-    min-height: 500px;
+    flex-direction: column; 
 }
 .fundo a{
     background-color: #1524B6;
@@ -209,6 +208,9 @@ body {
     grid-area: rodape;
     background-color: #0a0f43;
     padding: 20px;
+    position: relative;
+    width: 100%;
+    margin-top: auto;
    
 }
 .logo-adidas {
@@ -237,52 +239,58 @@ body {
 .rodape img {
     object-fit: contain;
 }
-.container2{
+.container2 {
     display: grid;
-    min-height: 100vh;
+    width: 100vw;
+    height: 100vh;
     grid-template-columns: 1fr;
-    grid-template-rows: 90px 1fr 100px;
-    grid-template-areas: 
-                        'menu'
-                        'historia'
-                        'rodape';
+    grid-template-rows: 90px 1fr auto;
+    grid-template-areas:
+        'menu'
+        'historia'
+        'rodape';
+    flex-direction: column;
 }
+
 .historia {
-    display: grid;
-    grid-area: historia;
+    display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     background-color: #6C77C7;
-    padding: 40px 40px; 
-    color: white;  
-    margin: 20px 300px;  
-    border-radius: 10px;  
+    padding: 40px;
+    color: white;
+    margin: 20px auto;
+    border-radius: 10px;
 }
 
 .historia h1 {
     font-size: 48px;
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
     font-weight: bold;
 }
 
 .historia p {
     font-size: 18px;
-    line-height: 1.6; 
-    margin-bottom: 15px; 
-    text-align: justify; 
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: justify;
 }
+
 .b_historia {
     font-family: "Roboto Condensed", sans-serif;
-    min-height: 100vh;
     background-color: #1524B6;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
-.logos{
+
+.logos {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
     width: 100%;
-   
 }
 .container3{
     display: grid;
@@ -385,9 +393,6 @@ body {
                             'menu'
                             'jogos'
                             'rodape';
-}
-.jogos{
-    grid-area: jogos;
 }
 .b_jogos {
     font-family: "Roboto Condensed", sans-serif;
@@ -594,7 +599,7 @@ body {
 .produtos{
     display: grid;
     grid-template-columns: repeat(4, auto);
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 .produto {
     background-color: #ffffff;
@@ -603,7 +608,7 @@ body {
     padding: 16px;
     max-width: 300px;
     text-align: center;
-    margin: 20px 0;
+    margin: 20px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -647,6 +652,12 @@ body {
 
 /* Estilos para telas menores que 1024px (tablets e celulares) */
 @media screen and (max-width: 1024px) {
+    .container {
+        grid-template-columns: 100vw;
+        grid-template-rows: 1fr;
+        width: 100vw;
+        height: 100vh;
+    }
     .menu ul {
         flex-direction: row;
         gap: 5px;
@@ -657,9 +668,6 @@ body {
     .menu a {
         font-size: 18px;
         padding: 8px;
-    }
-    .fundo {
-        min-height: 400px;
     }
     .fundo a {
         font-size: 24px;
@@ -680,30 +688,51 @@ body {
         width: auto;
         margin-top: 30px;
     }
+    .historia {
+        width: 90%;
+        padding: 30px;
+    }
+
+    .historia h1 {
+        font-size: 36px;
+    }
+
+    .historia p {
+        font-size: 16px;
+    }
+    .goleiros, .zagueiros, .volantes, .meias, .atacantes, .laterais, .tecnicos {
+        grid-template-columns: repeat(3, 200px);
+}
+    .jogos{
+        grid-template-columns: repeat(3, auto);
+    }
+    .container2{
+        height: 100vh;
+        grid-template-rows: 1fr;
+    }
+    .layout-contato {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .simulacao-formulario {
+        width: 100%;
+    }
+
+    .menu ul li {
+        margin: 5px;
+    }
 }
 
 /* Estilos para telas menores que 768px (celulares) */
 @media screen and (max-width: 768px) {
     .container {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
+        grid-template-columns: 100vw;
+        grid-template-rows: 1fr;
+        width: 100vw;
     }
-    .menu {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 10px;
-    }
-    .menu ul {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-    }
-    .menu a {
-        font-size: 16px;
-        padding: 10px;
+    .container2{
+        min-height: 100vh;
     }
     .fundo {
         min-height: 300px;
@@ -721,24 +750,62 @@ body {
     .artigos img {
         max-width: 100%;
     }
-    .jogadores1 {
-        grid-template-columns: 1fr;
+    .jogadores {
+        grid-template-columns: 2fr;
     }
     .jogador1 img {
         width: 100px;
     }
-    .rodape {
-        text-align: center;
-    }
     .logo-marcas, .logo-redesocial {
+        flex-direction: row;
+        align-items: center;
+    }
+    .logo-marcas a, .logo-redesocial a {
+        margin-bottom: 10px;
+    }
+    .historia {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .historia h1 {
+        font-size: 32px;
+    }
+
+    .historia p {
+        font-size: 14px;
+    }
+
+    .logos {
         flex-direction: column;
         align-items: center;
     }
     .logo-marcas a, .logo-redesocial a {
         margin-bottom: 10px;
     }
+    .goleiros, .zagueiros, .volantes, .meias, .atacantes, .laterais, .tecnicos {
+        grid-template-columns: repeat(2, 200px);
+    }
+    .jogos {
+        grid-template-columns: repeat(2, auto);
+    }
+    .produtos {
+        grid-template-columns: repeat(2, 290px);
+
+    }
+
+    .produto {
+        width: 250px;
+        justify-content: center;
+    }
+    .imagens-produto img {
+        border: 2px solid black;
+        width: 80px;
+        height: 100px;
+        margin: 5px;
+    }
+    .bone img{
+        width: 100px;
+        height: 80px;
+    }
 }
-
-
-
-
