@@ -484,7 +484,6 @@ body {
     text-align: center;
     justify-content: center;
     align-content: center;
-    min-height: 1200px
 }
 
 .contato .centro {
@@ -808,4 +807,6 @@ body {
         max-width: 100px;
         height: 80px;
     }
+    .contato{
+        min-height: 1200px;
 }
